@@ -2,7 +2,7 @@ input.onButtonPressed(Button.A, function () {
     Střel.move(-1)
 })
 input.onButtonPressed(Button.AB, function () {
-    sprite = 1
+    sprite = 0
 })
 input.onButtonPressed(Button.B, function () {
     Střel.move(1)
@@ -21,7 +21,7 @@ input.onLogoEvent(TouchButtonEvent.Pressed, function () {
 let Loď: game.LedSprite = null
 let Střel: game.LedSprite = null
 let sprite = 0
-sprite = 0
+sprite = 1
 game.setScore(0)
 Vytvor()
 basic.forever(function () {

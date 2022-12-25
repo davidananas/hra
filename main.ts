@@ -2,7 +2,7 @@ input.onButtonPressed(Button.A, function () {
     Střel.move(-1)
 })
 input.onButtonPressed(Button.AB, function () {
-	
+    sprite = 1
 })
 input.onButtonPressed(Button.B, function () {
     Střel.move(1)

@@ -2,12 +2,8 @@ input.onButtonPressed(Button.A, function () {
     Střel.move(-1)
 })
 input.onButtonPressed(Button.AB, function () {
-    if (Postava == 0) {
-        Start = 0
-        sprite = 0
-    } else {
-        control.reset()
-    }
+    Start = 0
+    sprite = 0
 })
 input.onButtonPressed(Button.B, function () {
     Střel.move(1)
@@ -28,10 +24,9 @@ input.onLogoEvent(TouchButtonEvent.Pressed, function () {
 let Loď: game.LedSprite = null
 let Střel: game.LedSprite = null
 let sprite = 0
-let Postava = 0
 let Start = 0
 Start = 1
-Postava = 0
+let Postava = 0
 sprite = 1
 game.setScore(1)
 Vytvor()
@@ -50,7 +45,7 @@ basic.forever(function () {
         Loď.delete()
         Vytvor()
         game.addScore(1)
-        basic.showString("" + (game.score()))
+        music.playSoundEffect(music.createSoundEffect(WaveShape.Sine, 1, 5000, 255, 255, 500, SoundExpressionEffect.None, InterpolationCurve.Linear), SoundExpressionPlayMode.UntilDone)
         basic.pause(700)
     }
     if (Loď.get(LedSpriteProperty.Y) == 4) {
@@ -58,7 +53,7 @@ basic.forever(function () {
         Střel.delete()
         Vytvor()
         game.addScore(-1)
-        basic.showString("" + (game.score()))
+        music.playSoundEffect(music.createSoundEffect(WaveShape.Sine, 5000, 1, 255, 255, 500, SoundExpressionEffect.None, InterpolationCurve.Linear), SoundExpressionPlayMode.UntilDone)
         basic.pause(700)
     }
     if (game.score() == 0) {

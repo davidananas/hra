@@ -14,13 +14,14 @@ input.onButtonPressed(Button.A, function () {
     Střel.move(-1)
 })
 function Konec () {
-    basic.showString("POCET KLIKNUTI ")
+    basic.showString("KLIKNUTI ")
     basic.showNumber(Klik)
     sprite = 1
     Loď.delete()
     Střel.delete()
     basic.showString("SCORE")
     basic.showNumber(game.score())
+    control.reset()
 }
 input.onPinPressed(TouchPin.P2, function () {
     music.setBuiltInSpeakerEnabled(false)
@@ -42,9 +43,7 @@ function Vytvor () {
     Loď.turn(Direction.Left, 90)
 }
 input.onLogoEvent(TouchButtonEvent.Pressed, function () {
-    if (sprite == 0) {
-        Konec()
-    }
+    control.reset()
 })
 let Loď: game.LedSprite = null
 let Střel: game.LedSprite = null

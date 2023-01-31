@@ -43,7 +43,7 @@ function Vytvor () {
     Loď.turn(Direction.Left, 90)
 }
 input.onLogoEvent(TouchButtonEvent.Pressed, function () {
-    control.reset()
+    Konec()
 })
 let Loď: game.LedSprite = null
 let Střel: game.LedSprite = null

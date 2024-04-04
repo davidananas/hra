@@ -23,6 +23,9 @@ function Konec () {
     basic.showNumber(game.score())
     control.reset()
 }
+input.onLogoEvent(TouchButtonEvent.Pressed, function () {
+    Konec()
+})
 input.onPinPressed(TouchPin.P2, function () {
     music.setBuiltInSpeakerEnabled(false)
 })
@@ -42,9 +45,6 @@ function Vytvor () {
     Loď = game.createSprite(randint(0, 4), 0)
     Loď.turn(Direction.Left, 90)
 }
-input.onLogoEvent(TouchButtonEvent.Pressed, function () {
-    Konec()
-})
 let Loď: game.LedSprite = null
 let Střel: game.LedSprite = null
 let sprite = 0
